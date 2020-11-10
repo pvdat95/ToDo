@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   public loginInvalid: boolean;
 
   private returnUrl: string;
-  error = '';
+
 
   constructor(
 
@@ -34,22 +34,20 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
 
-    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/game';
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/todo-list';
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
 
     if (this.authService.loggedIn()) {
-      this.router.navigate(['/todo-list']);
+      this.router.navigate([this.returnUrl]);
     }
   }
 
 
   onSubmit() {
-
     this.loginInvalid = false;
-
     if (this.form.valid) {
       this.authService.login(this.form.value).subscribe(res => {
         localStorage.setItem('apiKey', res.apiKey);

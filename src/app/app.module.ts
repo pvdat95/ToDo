@@ -13,10 +13,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule, MatButtonModule } from '@angular/material';
+import { TodoListComponent } from './todo-list/todo-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
