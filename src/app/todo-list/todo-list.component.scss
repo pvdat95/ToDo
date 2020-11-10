@@ -1,0 +1,58 @@
+.form-container {
+  padding: 20px;
+  .label {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .input-task {
+    margin-right: 10px;
+  }
+}
+
+.todo-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  .container-item {
+    position: relative;
+    .todo-link {
+      display: inline-block;
+      margin: 10px;
+      vertical-align: top;
+      width: 350px;
+      .complete {
+        text-decoration: line-through;
+      }
+      .todo-card {
+        text-align: center;
+        & button .material-icons {
+          font-size: 16px;
+          padding: 0;
+        }
+
+        &:hover button {
+          display: inline-block;
+        }
+
+        & button {
+          display: none;
+          margin: -4px 5px;
+          width: 30px;
+          height: 30px;
+          color: unset;
+          background-color: #d2cccc59;
+        }
+      }
+    }
+  }
+}
+
+mat-card-header {
+  display: inline;
+}
+
+a,
+a label {
+  cursor: pointer;
+  text-decoration: none;
+}

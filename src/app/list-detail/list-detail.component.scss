@@ -1,0 +1,13 @@
+@import '../todo-list/todo-list.component.scss';
+:host {
+  .list-detail {
+    padding: 20px;
+    .label {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .input-task {
+      margin-right: 10px;
+    }
+  }
+}

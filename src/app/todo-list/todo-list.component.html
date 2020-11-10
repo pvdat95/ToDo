@@ -1,1 +1,43 @@
-<p>todo-list works!</p>
+<div class="form-container">
+  <mat-form-field class="input-task">
+    <input matInput placeholder="Input New List" [(ngModel)]="newList" />
+  </mat-form-field>
+
+  <button mat-raised-button (click)="addNewList()" [disabled]="!newList">
+    <mat-icon>add</mat-icon>
+    Add
+  </button>
+</div>
+
+<mat-card class="todoapp">
+  <mat-toolbar color="primary">
+    <p class="label">
+      {{ label }}
+    </p>
+  </mat-toolbar>
+
+  <mat-card-content *ngIf="lists.length">
+    <div class="todo-list-container">
+      <div *ngFor="let list of lists; let index=index" class="container-item">
+        <a class="todo-link">
+          <mat-card class="todo-card">
+            <mat-card-title>{{ list.name }}</mat-card-title>
+            <mat-card-content>{{ list.tasks }} tasks</mat-card-content>
+            <span>
+              <button
+                mat-mini-fab
+                (click)="deleteList(list.id,index)"
+                color="primary"
+              >
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+              <button mat-mini-fab (click)="editList(list)" color="primary">
+                <mat-icon>mode_edit</mat-icon>
+              </button>
+            </span>
+          </mat-card>
+        </a>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
